@@ -269,3 +269,6 @@ Cuando se crea una instancia es necessario agregar el ROL de IAM EC2DomainJoin e
 
 # Visualizando el servicio de SQL server:
 ![Imagen](img15.jpg)
+
+# Validando domio del servidor:
+![Imagen](img16.jpg)
