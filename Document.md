@@ -211,12 +211,61 @@ Como en la sección anterior especificaremos los pasos necesarios para la creaci
 
 5. Con los pasos anteriores hemos configurado nuestra máquina virtual de windows.
 
-
+#
 # IP Pública
 
 Las direcciones IP permiten que los recursos de la VPC se comuniquen entre sí y con otros recursos a través de Internet. Amazon EC2 y Amazon VPC admiten los protocolos de direcciones IPv4 e IPv6. 
 
 De forma predeterminada se utilizó  el protocolo de direccionamiento IPv4. Al crear una VPC, debe asignarle un bloque de CIDR IPv4 (un rango de direcciones IPv4 privadas). No es posible obtener acceso a las direcciones IPv4 privadas a través de Internet. Para conectar su instancia a través de Internet o para habilitar la comunicación entre sus instancias y otros servicios de AWS con puntos de conexión públicos, puede asignar a su instancia una dirección IPv4 pública globalmente única.
 
+#
+# VPC: 
+Una para el dominio y otra para el entorno On-premise
+PVC Configuradas:  
+
+![Imagen](img4.jpg)
+![Imagen](img5.jpg)
+
+#
+# Subredes:
+Se crearon dos subredes  para tener alta disponiblidad , subredes OnPremis y las del domine service. 
+![Imagen](img6.jpg)
+
+#
+# Peering Connections:
+Las subredes tienen intercomunicacion con el Peering connections, se configuro para que las dos VPC´s pasen trafico entre ellas, simula tener dos redes en distintas ubicaciones. 
+![Imagen](img7.jpg)
+
+#
+# Instancias :
+Se configurarion instancias en Linux y en Windows Server 2012 con SQL Server 2016
+![Imagen](img8.jpg)
+
+#
+# Se configuro servicio del Directorio Activo :
+
+![Imagen](img9.jpg)
+
+Nombre del dominio proyecto.local, se visualizan los servidores DNS dentro de aws y las subredes a las que afecta y las regiones a las que afecta mostrando la alta disponibilidad ya que se esta en dos zonas distintas. 
+
+![Imagen](img10.jpg)
 
 
+# Roles Creados para el accesso y creacion de instancias:
+![Imagen](img11.jpg)
+
+# Creacion de instancia:
+
+Cuando se crea una instancia es necessario agregar el ROL de IAM EC2DomainJoin esto hara que la instancia creada se agregue de forma automatica a al dominio Proyecto.local
+![Imagen](img12.jpg)
+
+# Conectandonos a un maquina de nuestra intrante:
+
+![Imagen](img13.jpg)
+
+# Visualizando nuestro servidor de Windows Server:
+
+![Imagen](img14.jpg)
+
+# Visualizando el servicio de SQL server:
+![Imagen](img15.jpg)
